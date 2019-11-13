@@ -1,0 +1,30 @@
+/*
+*A frog can jump up one step at a time, or two...It can also jump to the n level.
+*Find out how many ways the frog can jump up n steps.
+*/
+/*
+we can use bp arithmetic to analyze this question.
+
+if n = 3;
+this frog jump up 3 steps can arrival terminal;so one way;
+2 steps:   one step;
+1 steps:   there are 2 steps left,so it's not difficulty to find out there are two ways;
+*/
+class Solution {
+public:
+    int jumpFloorII(int number) {
+        int sum = 1;
+        int mi = number - 1;
+        if(mi == 0)
+        {
+            return sum;
+        }
+        
+        while(mi--)
+        {
+            sum*=2;
+        }
+        
+        return sum;
+    }
+};
